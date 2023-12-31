@@ -6,7 +6,7 @@
 </div>
 
 ## Descripción General
-Este repositorio contiene un dataset y scripts para analizar producirlo. A su vez, analiza información sobre videojuegos, utilizando datos de la API de RAWG. El análisis se centra en identificar tendencias y patrones en la popularidad de diferentes géneros de videojuegos a lo largo del tiempo.
+Este repositorio contiene un dataset y scripts para producirlo. A su vez, analiza información sobre videojuegos, utilizando datos de la API de RAWG. El análisis se centra en identificar tendencias y patrones en la popularidad de diferentes géneros de videojuegos a lo largo del tiempo.
 
 ## Estructura del Dataset
 El dataset incluye los siguientes atributos:
