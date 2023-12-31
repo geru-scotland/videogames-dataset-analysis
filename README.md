@@ -34,7 +34,7 @@ Puede ser utilizado para realizar análisis en aplicaciones machine learning; pu
 ## Cómo Ejecutar
 1. Clonar el repositorio.
 2. Ejecutar el script `game_data_analyzer.py` para recopilar y procesar los datos.
-3. Listo, en el nuevo directorio data/arff se dispondrá del dataset actualizado y listo para ser analizado.
+3. Listo, en el nuevo directorio `data/arff` se dispondrá del dataset actualizado y listo para ser analizado.
 
 ## Autores
 Aingeru García
