@@ -11,11 +11,11 @@ Este repositorio contiene un dataset y scripts para producirlo. A su vez, analiz
 ## Estructura del Dataset
 El dataset incluye los siguientes atributos:
 
-- `genre` (STRING): Categoría o tipo del videojuego (ej. Acción, RPG, Aventura, etc.).
-- `year` (NUMERIC): Año en que el juego fue lanzado.
-- `average_rating` (NUMERIC): Calificación media otorgada a los juegos de un género específico en un año determinado.
-- `game_count` (NUMERIC): Número total de juegos lanzados en un género particular durante un año específico.
-- `genre_successful` (NUMERIC): Indicador binario (1 o 0) que muestra si un género es considerado exitoso en un año basado en el umbral de calificación promedio.
+- `genre` (STRING):  El género del videojuego. Representa la categoría o tipo del juego: Acción, RPG, Aventura, etc.
+- `year` (NUMERIC): El año de lanzamiento.
+- `average_rating` (NUMERIC):  La calificación o rating de ese género para ese año en concreto.
+- `game_count` (NUMERIC): La cantidad de juegos del género en cuestión que fueron lanzados ese mismo año.
+- `genre_successful` (NUMERIC): Etiqueta o clase, valor binario (1 o 0) que muestra si un género es considerado exitoso en un año basado en el umbral de calificación promedio.
 
 ## Proceso de Análisis
 El proceso de análisis consta de los siguientes pasos:
