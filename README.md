@@ -1,5 +1,9 @@
-# Video Games Dataset Analysis
-![Controles de Videojuegos](images/controles.png)
+<div align="center">
+  <h1>Video Games Dataset Analysis</h1>
+</div>
+<div align="center">
+  <img src="images/controles.png" width="600" alt="Controles">
+</div>
 
 ## Descripción General
 Este repositorio contiene un dataset y scripts para analizar producirlo. A su vez, analiza información sobre videojuegos, utilizando datos de la API de RAWG. El análisis se centra en identificar tendencias y patrones en la popularidad de diferentes géneros de videojuegos a lo largo del tiempo.
