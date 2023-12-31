@@ -20,7 +20,7 @@ El dataset incluye los siguientes atributos:
 ## Proceso de Análisis
 El proceso de análisis consta de los siguientes pasos:
 
-1. **Extracción de Datos:** Utilizando la API de RAWG, se recopilan diferentes datos de videojuegos como el nombre, género, fecha de lanzamiento y calificaciones.
+1. **Extracción de Datos:** Utilizando la [API de RAWG](https://api.rawg.io/docs/), se recopilan diferentes datos de videojuegos como el nombre, género, fecha de lanzamiento y calificaciones.
 2. **Procesamiento de Datos:** Los datos se procesan para calcular el rating promedio y la cantidad de juegos lanzados por género y año. También se determina si un género es exitoso en un año específico basándose en un umbral de calificación promedio, con esto se etiqueta o clasifica la instancia.
 3. **Almacenamiento de Datos:** Los datos procesados se almacenan en un archivo en formato ARFF, con objeto de poder ser analizado fácilmente.
 
