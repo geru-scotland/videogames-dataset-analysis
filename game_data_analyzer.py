@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import requests
+
 """
 Script de Análisis de Datos de Videojuegos (GameDataAnalyzer)
 
@@ -18,9 +19,11 @@ Requisitos:
 - pandas, requests
 """
 
+
 class GameDataAnalyzer:
     """Clase para analizar datos de videojuegos usando la API de RAWG.
     Se encarga de recopilar, procesar y convertir datos en varios formatos."""
+
     def __init__(self, api_key):
         """Inicializa la instancia de GameDataAnalyzer con la clave API y configura los parámetros iniciales."""
         self.api_key = api_key
@@ -47,8 +50,10 @@ class GameDataAnalyzer:
             response = requests.get(self.url, params=self.params)
             if response.status_code != 200:
                 break
+
             data = response.json()
             temp_data = []
+
             for game in data['results']:
                 for genre in game['genres']:
                     row = {
@@ -58,7 +63,9 @@ class GameDataAnalyzer:
                         'rating': game['rating']
                     }
                     temp_data.append(row)
+
             games_data = pd.concat([games_data, pd.DataFrame(temp_data)], ignore_index=True)
+
             if 'next' in data and data['next']:
                 self.url = data['next']
             else:
@@ -89,16 +96,32 @@ class GameDataAnalyzer:
 
         with open(arff_file, 'w') as f:
             f.write('@RELATION video_games\n\n')
+            data_rows = []
+            genres = []
+            genres_str = ""
+
+            for index, row in data.iterrows():
+                row['genre'] = row['genre'].replace(' ', '-')
+                data_rows.append(','.join(str(value) for value in row))
+                if row['genre'] not in genres:
+                    genres.append(row['genre'])
+
+            if genres:
+                genres_str = "{" + ", ".join(genres) + "}"
+
             for column in data.columns:
                 if data[column].dtype == object:
-                    f.write(f"@ATTRIBUTE {column} STRING\n")
+                    f.write(f"@ATTRIBUTE {column} {genres_str}\n")
                 else:
-                    f.write(f"@ATTRIBUTE {column} NUMERIC\n")
+                    if column == "genre_successful":
+                        class_str = "{0, 1}"
+                        f.write(f"@ATTRIBUTE {column} {class_str}\n")
+                    else:
+                        f.write(f"@ATTRIBUTE {column} NUMERIC\n")
 
             f.write('\n@DATA\n')
-            for index, row in data.iterrows():
-                row_str = ','.join(str(value) for value in row)
-                f.write(row_str + '\n')
+            for row in data_rows:
+                f.write(row + '\n')
 
         print(f"ARFF file saved as {arff_file}")
 
@@ -107,5 +130,5 @@ api_key = 'your_api_key'
 analyzer = GameDataAnalyzer(api_key)
 analyzer.fetch_data()
 analyzer.process_data()
-analyzer.convert_csv_to_arff('data/average_ratings_count_success_by_genre_and_year.csv', 'data/arff/video_games_data.arff')
-
+analyzer.convert_csv_to_arff('data/average_ratings_count_success_by_genre_and_year.csv',
+                             'data/arff/video_games_data.arff')
