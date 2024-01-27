@@ -4,13 +4,14 @@
 %      (a) Creator: Aingeru García
 %      (b) Date: December 31, 2023
 %      (c) Description: Analysis of video game genres' popularity and success over various years.
+%      (d) Code and documentation: https://github.com/geru-scotland/videogames-dataset-analysis
 %
 % 3. Attribute Information:
-%      (a) genre: String. The genre of the video game (e.g., Action, RPG, Racing).
+%      (a) genre: Nominal. The genre of the video game (e.g., Action, RPG, Racing).
 %      (b) year: Numeric. The year of the video games' release.
 %      (c) average_rating: Numeric. The average user rating for games of a specific genre in a given year.
 %      (d) game_count: Numeric. The number of games released in a particular genre during a specific year.
-%      (e) genre_successful: Numeric. Indicator of success, 1 if the average rating is above 3.2, 0 otherwise.
+%      (e) genre_successful: Nominal. Indicator of success, 1 if the average rating is above 3.2, 0 otherwise.
 %
 % 4. Data Description:
 %      This dataset contains information about various video game genres, their average ratings, and counts per year.
@@ -20,11 +21,11 @@
 %
 @RELATION video_games
 
-@ATTRIBUTE genre STRING
+@ATTRIBUTE genre {Action, Adventure, Arcade, Board-Games, Card, Casual, Educational, Family, Fighting, Indie, Massively-Multiplayer, Platformer, Puzzle, RPG, Racing, Shooter, Simulation, Sports, Strategy}
 @ATTRIBUTE year NUMERIC
 @ATTRIBUTE average_rating NUMERIC
 @ATTRIBUTE game_count NUMERIC
-@ATTRIBUTE genre_successful NUMERIC
+@ATTRIBUTE genre_successful {0, 1}
 
 
 @DATA
@@ -128,17 +129,17 @@ Arcade,2019,3.598333333333333,6,1
 Arcade,2020,3.88,3,1
 Arcade,2021,3.515,2,1
 Arcade,2022,4.08,1,1
-Board Games,2006,3.23,1,1
-Board Games,2009,3.58,1,1
-Board Games,2010,2.94,1,0
-Board Games,2012,1.73,1,0
-Board Games,2013,2.865,4,0
-Board Games,2014,3.32,4,1
-Board Games,2015,3.1466666666666665,3,0
-Board Games,2016,3.27,3,1
-Board Games,2017,2.53,1,0
-Board Games,2018,3.59,1,1
-Board Games,2020,3.03,1,0
+Board-Games,2006,3.23,1,1
+Board-Games,2009,3.58,1,1
+Board-Games,2010,2.94,1,0
+Board-Games,2012,1.73,1,0
+Board-Games,2013,2.865,4,0
+Board-Games,2014,3.32,4,1
+Board-Games,2015,3.1466666666666665,3,0
+Board-Games,2016,3.27,3,1
+Board-Games,2017,2.53,1,0
+Board-Games,2018,3.59,1,1
+Board-Games,2020,3.03,1,0
 Card,2006,3.23,1,1
 Card,2010,3.39,1,1
 Card,2013,3.61,2,1
@@ -250,25 +251,25 @@ Indie,2020,3.54969696969697,66,1
 Indie,2021,3.603870967741936,31,1
 Indie,2022,3.911052631578948,19,1
 Indie,2023,3.77,1,1
-Massively Multiplayer,2000,4.31,1,1
-Massively Multiplayer,2001,3.53,1,1
-Massively Multiplayer,2003,3.38,1,1
-Massively Multiplayer,2004,4.31,1,1
-Massively Multiplayer,2006,3.23,1,1
-Massively Multiplayer,2009,4.42,1,1
-Massively Multiplayer,2010,2.975,2,0
-Massively Multiplayer,2011,2.8866666666666667,6,0
-Massively Multiplayer,2012,3.0075,8,0
-Massively Multiplayer,2013,3.127272727272727,11,0
-Massively Multiplayer,2014,2.659,10,0
-Massively Multiplayer,2015,2.88,10,0
-Massively Multiplayer,2016,2.951428571428571,21,0
-Massively Multiplayer,2017,2.894705882352941,17,0
-Massively Multiplayer,2018,3.10875,8,0
-Massively Multiplayer,2019,3.1333333333333333,3,0
-Massively Multiplayer,2020,3.74,1,1
-Massively Multiplayer,2021,3.035,2,0
-Massively Multiplayer,2022,3.44,2,1
+Massively-Multiplayer,2000,4.31,1,1
+Massively-Multiplayer,2001,3.53,1,1
+Massively-Multiplayer,2003,3.38,1,1
+Massively-Multiplayer,2004,4.31,1,1
+Massively-Multiplayer,2006,3.23,1,1
+Massively-Multiplayer,2009,4.42,1,1
+Massively-Multiplayer,2010,2.975,2,0
+Massively-Multiplayer,2011,2.8866666666666667,6,0
+Massively-Multiplayer,2012,3.0075,8,0
+Massively-Multiplayer,2013,3.127272727272727,11,0
+Massively-Multiplayer,2014,2.659,10,0
+Massively-Multiplayer,2015,2.88,10,0
+Massively-Multiplayer,2016,2.951428571428571,21,0
+Massively-Multiplayer,2017,2.894705882352941,17,0
+Massively-Multiplayer,2018,3.10875,8,0
+Massively-Multiplayer,2019,3.1333333333333333,3,0
+Massively-Multiplayer,2020,3.74,1,1
+Massively-Multiplayer,2021,3.035,2,0
+Massively-Multiplayer,2022,3.44,2,1
 Platformer,1985,4.31,1,1
 Platformer,1988,4.38,1,1
 Platformer,1990,4.37,1,1
